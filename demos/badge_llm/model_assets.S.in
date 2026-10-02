@@ -1,0 +1,13 @@
+.section .rodata.model,"a",%progbits
+.balign 4
+.global model_start
+model_start:
+  .incbin "@CMAKE_CURRENT_SOURCE_DIR@/assets/stories260K.bin"
+.global model_end
+model_end:
+.balign 4
+.global tokenizer_start
+tokenizer_start:
+  .incbin "@CMAKE_CURRENT_SOURCE_DIR@/assets/tok512.bin"
+.global tokenizer_end
+tokenizer_end:

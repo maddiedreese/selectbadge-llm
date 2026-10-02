@@ -1,0 +1,7 @@
+add_executable(badge_llm main.cpp model.cpp ${CMAKE_CURRENT_BINARY_DIR}/model_assets.S)
+configure_file(model_assets.S.in model_assets.S @ONLY)
+target_link_libraries(badge_llm badge)
+target_compile_options(badge_llm PRIVATE -O2 -Wall -Wextra)
+pico_enable_stdio_usb(badge_llm 1)
+pico_enable_stdio_uart(badge_llm 0)
+pico_add_extra_outputs(badge_llm)
